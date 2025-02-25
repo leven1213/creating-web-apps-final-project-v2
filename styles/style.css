@@ -1,0 +1,916 @@
+/*
+filename: Levenspeil Sangalang
+author: Levenspeil Sangalang
+created: March 10, 2023
+last modified: May 25, 2023
+description: Stylesheet for index.php, apply.php, 
+jobs.php, about.php, manage.php and its respective PHP and INC files
+*/
+
+/* General tags */
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    scroll-behavior: smooth;
+} 
+
+/* Centers text */
+.center-align{
+    text-align: center;
+} 
+
+/* Padding spacer */
+.padding-spacer{
+    padding: 2em;
+    background: #ffe1c9;
+} 
+
+/* Anchor tag automatically inherits root color */
+a{
+    color: inherit;
+}
+
+/* Gives paragraph tags font weight */
+p{ 
+    font-weight: 400;  
+}
+ 
+/* Use of background image for root bg */
+:root{
+    background: url(images/offwhite.jpeg) repeat-x top left;
+    color: #18110c; 
+}
+
+/* We use em and rem for accessibility purposes */
+/* Heading styles */
+h1{
+    font: 300 1.9rem 'Space Mono', monospace;
+}
+
+h2{
+    font: 300 1.6rem 'Space Mono', monospace;
+}
+
+h3{
+    font: 300 1.3rem 'Space Mono', monospace;
+}
+
+h4{
+    font: 300 1.1rem 'Space Mono', monospace;
+}
+
+h5{
+    font: 300 0.9rem 'Space Mono', monospace;
+}
+
+h6{
+    font: 300 0.6rem 'Space Mono', monospace;
+}
+
+/* Color-corrector */
+.grey{
+    color: #585252; 
+    font-size: 1.1rem;
+}
+
+.teal{
+    color: #007291; 
+    font-size: 18pt;
+}
+
+figcaption h5{
+    color: #747474;  
+}
+
+/* Navigation bar elements */
+.plogo{
+    font: 700 1.6rem 'Space Mono', monospace;
+    color: #007291;
+    display: flex;
+    align-items: center;
+}
+    
+.plogo div{
+    font-size: 1.4rem;
+    color: #007291;
+    margin-right: 3px;
+}
+
+header{
+    background-color: #ffffff;
+    border-bottom: 1px solid #CDEAE0;
+    padding: 13px 7%;
+    width: 100%;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    display: flex;
+    transition: all .50s ease;
+}
+
+menu{
+    display: flex; 
+}
+
+menu a, .padding-spacer a{
+    font: 300 1.1rem 'Space Mono', monospace;
+    color: inherit; 
+    margin: 0px 30px; 
+    padding: 5px 0; 
+    float: right;
+}
+
+menu li{
+    list-style: none;
+}
+
+menu a:hover{ 
+    font-size: 1.1rem; 
+    color: #007291;
+    display: block;
+    transition: 275ms ease;
+}
+
+menu #select:link{ 
+    color: #007291;
+    border-bottom: 3px solid #007291;
+}
+
+/* Minimum height for viewport purposes */
+body{
+    min-height: 100vh;
+}
+
+/* Colored and transparent button styles */
+button#highlight{
+    font: 400 1.1rem 'Space Mono', monospace;
+    color: #ffffff;
+    background-color: #007291;
+    text-decoration: none;
+    border: 2px solid transparent;
+    border-radius: 30px;
+    padding: 13px 30px;
+}
+
+button#highlight:hover{
+    color: #321904;
+    background-color: transparent;
+    border: 2px solid #007291;
+    cursor: pointer;
+    transition: 275ms ease;
+}
+        
+button{
+    font: 400 1.2rem 'Space Mono', monospace;
+    color: #005d77;
+    background-color: transparent;
+    text-decoration: none;
+    border: 2px solid #005d77;
+    border-radius: 30px;
+    padding: 13px 30px;
+}
+
+button:hover{
+    color: #ffffff;
+    background-color: #005d77;
+    border: 2px solid #005d77;
+    cursor: pointer;
+    transition: 275ms ease;
+} 
+
+/* General section elements */
+section{
+    width: 100%;
+    margin: 0 auto; 
+    display: table;
+}
+
+.head-title{
+    padding: 0 0 0.5em 4em;
+}
+
+/* Home top container */
+#hero-top{
+    background-color: #ffffff; 
+    line-height: 6em;
+    padding: 12em 6em 4em 6em;
+    width: 100%; 
+    clear: both;
+    float: left;  
+}
+
+/* Succeeding pages top container */
+#page-top{
+    background-color: #eefff9;
+    padding: 12em 6em 4em 6em;
+    width: 100%; 
+    clear: both;
+    float: left;  
+}
+
+/* General pages top container */
+#hero-top p, #page-top p{
+    font: 500 6rem 'Darker Grotesque', sans-serif; 
+    width: 70%;
+    line-height: 1em;
+}
+
+#hero-top span, #page-top span{
+    font: 400 5rem 'Space Mono', monospace; 
+    line-height: 1em;
+}
+
+/* Home float left containers and elements */
+#hero-top #hero-left{
+    padding: 0 1em 0 0;
+    float: left;  
+}
+
+#about-left{
+    padding: 0;
+    float: left;  
+}
+
+#hero-top #hero-left ul{
+    font-weight: 500;
+    list-style: none;
+}
+
+#hero-left button{
+    font-size: 1.5rem;
+    margin-top: 1.3em;
+}
+
+/* Home float right containers and elements */
+#hero-right{
+    padding: 0;
+    float: right;  
+}
+
+#about-right{
+    padding: 0 6em 2.5em 0;
+    float: right;  
+}
+
+#hero-right p{
+    font: 400 24px 'Darker Grotesque', sans-serif; 
+    line-height: 34px;
+    padding-top: 1em;
+}
+
+#about-right p{
+    font: 400 24px 'Darker Grotesque', sans-serif; 
+    line-height: 34px;
+    padding-top: 1em;
+}
+
+/* General right containers' list styles */
+#hero-right ul, #about-right ul{
+    font: 1.3rem 'Darker Grotesque', sans-serif; 
+    margin-left: 1em;
+    padding-top: 1em;
+    list-style-type: square;
+}
+
+#hero-right ol, #about-right ol{
+    font: 1.3rem 'Darker Grotesque', sans-serif;
+    margin-left: 1em; 
+}
+
+/* Float left and right containers 1/2 columns */
+#hero-left, #hero-right, #about-left, #about-right{
+    width: 50%;
+}
+
+/* Home about preview containers and elements */
+.about-top{
+    background-color: #f3fffb;
+    padding: 5em 0 2em 0;
+    width: 100%;
+}
+
+.about-top img, .about-top figcaption{
+    width: 90%;
+    padding-left: 6em;
+    height: auto;
+}
+
+.about-top #hero-right p{
+    font-size: 1.5rem;
+    line-height: 2rem;
+}
+
+.about-top #about-right button{ 
+    margin-top: 3rem;
+} 
+
+.about-top p{
+    font: 500 1.2em 'Darker Grotesque', sans-serif; 
+    line-height: 77px;
+}
+
+.about-top span{
+    font: 400 78px 'Space Mono', monospace;
+}
+
+/* Home jobs preview or general container */
+.job-top{
+    background-color: #FFFFFF;
+    width: 100%;
+    border-left: solid 7px #007291;
+    padding: 5em 0 6em 0;
+} 
+
+.job-top h2{
+    text-align: center;
+}
+
+.job-top button{ 
+    display: block;
+    margin: 3rem auto 0; 
+}
+
+/* Home jobs preview capsules that floats left and right, 
+with styled icons using before selector */
+.hjobs-info-left{  
+    clear: both;
+    float: left;
+}
+
+.hjobs-info-left .loc ul li{  
+    display: inline-block; 
+}
+
+.hjobs-info-left .loc li{  
+    padding-right: 1em;
+}
+
+.hjobs-info-left .loc p:before{  
+    color: #949494;
+    font-size: 0.8rem; 
+    padding-right: 0.4em;
+}
+
+.hjobs-info-left .loc p{ 
+    font: 500 1.4rem 'Darker Grotesque', sans-serif;
+    color: #3B281D;
+    display: inline-block; 
+}
+
+.hjobs-info-right{ 
+    float: right;
+}
+
+/* One column container */
+#center-col{ 
+    padding: 1em 6em 1em 6em;
+    width: 100%; 
+    clear: both;
+    float: left;  
+}
+
+/* One column container with tighter padding*/
+#center-col2{ 
+    padding: 1em 2em;
+    width: 100%; 
+    clear: both;
+    float: left;  
+}
+
+/* Aside and rounded box container styles */
+aside, .roundbox{ 
+    background-color: #FCFCFC; 
+    border-radius: 14px;  
+    padding: 2em;
+    width: 100%;
+    box-shadow: 0 1px 3px rgb(0 0 0 / 0.1);
+    display: inline-block;
+}
+
+aside:hover, .roundbox:hover{  
+    box-shadow: 0 1px 14px rgb(0 0 0 / 0.15); 
+    transition: 275ms ease;
+} 
+
+aside p, .roundbox p{  
+    text-decoration: none;
+}
+
+aside h1, h2, h3, h4, h5, h6,
+.roundbox h1, h2, h3, h4, h5, h6{ 
+    color: #1b120d;  
+}
+
+/* Arrow style */
+.arrow{ 
+    color: #007291;
+    font-size: 2.4rem;
+    float: right;
+}
+
+.hjobs-info-right .arrow:hover{  
+    animation: arrow1 1s ease-in-out infinite; 
+}
+
+#page-top .arrow{ 
+    animation: arrow2 1s ease-in-out infinite; 
+}
+
+/* Jobs page main container */
+.blockjob{
+    background-color: #FCFCFC;
+    padding: 5em 0 3em 0;
+    width: 100%;
+    border-top: dotted 5px #CDEAE0;
+    clear: both; 
+}
+
+/* Jobs 3/4 left floater */
+.wide-left{
+    padding: 0 1em 4em 6em;
+    width: 65%;
+    float: left;
+}
+
+/* Jobs 1/4 right floater */
+.narrow-right{
+    padding: 0 6em 4em 1em;
+    width: 35%;
+    float: right;
+} 
+
+/* Jobs left and right floaters' paragraph and list styles */
+.blockjob .wide-left ul{
+    font: 400 1.3rem 'Darker Grotesque', sans-serif;
+    line-height: 1.7rem;
+    list-style-type: square;
+    padding-left: 0;
+}
+
+.blockjob .wide-left p{
+    font: 400 1.3rem 'Darker Grotesque', sans-serif;
+    line-height: 1.7rem; 
+}
+
+.blockjob .narrow-right ul li{
+    list-style-position: inside;
+    list-style: none;
+}
+
+.blockjob .narrow-right p{
+    font: 400 1.3rem 'Darker Grotesque', sans-serif;
+    line-height: 1.7rem; 
+}
+
+.blockjob .wide-left ol{
+    font: 400 1.3rem 'Darker Grotesque', sans-serif;
+    line-height: 2rem; 
+    padding-left: 0;
+    list-style-position: inside;
+}
+
+.blockjob .narrow-right a{
+    color: #3B281D;
+    text-decoration: underline;
+}
+
+.blockjob .narrow-right button{ 
+    margin: 4em 0 2em 0;
+}
+
+/* Jobs 1/4 aside box styles */
+.blockjob aside{ 
+    font-family: 'Darker Grotesque', sans-serif;
+    background-color: #FFFFFF;
+    border: 1px solid #d8d8d8;
+    border-radius: 14px; 
+    margin-top: -8em;
+    padding: 3em;
+    width: 100%;
+    box-shadow: 0 1px 14px rgb(0 0 0 / 0.15);  
+    z-index: 1;
+    float: left;
+}
+
+/* Jobs styled icons using before selector */
+.blockjob i:before{  
+    color: #007291;
+    font-size: 0.8rem; 
+    padding-right: 0.4em;
+}
+
+/* Jobs image, links and text assignments */
+.blockjob img{ 
+    width: 27%;
+    margin: 1em;
+}
+
+.blockjob p{ 
+    color: #3B281D;
+    font: 400 .3rem 'Darker Grotesque', sans-serif;
+}
+
+.blockjob h5{
+    font: 400 1.1rem 'Darker Grotesque', sans-serif;
+    color: #615e5e;
+}
+
+.blockjob a{
+    color: #3B281D;
+    text-decoration: underline #007291;
+}
+
+.blockjob a:hover{
+    color: #007291; 
+    transition: 275ms ease;
+}
+
+/* About page container */
+#blockabout{
+    background-color: #FCFCFC;
+    padding: 5em 0 2em 6em;
+    width: 100%;
+    border-top: dotted 5px #CDEAE0;
+}
+
+/* About page image width */
+#blockabout img{
+    width: 75%;
+    border: 4px solid #CDEAE0;
+    height: auto;
+}
+
+/* About text and buttons styles */
+#blockabout .about-left p{
+    font: 400 1.5rem 'Darker Grotesque', sans-serif;
+    line-height: 2rem;
+}
+
+#blockabout .about-left button{ 
+    margin-top: 3rem;
+}  
+
+/* About definition list styles */
+#blockabout dt{
+    font: 400 1.1rem 'Space Mono', monospace;  
+    text-transform: uppercase; 
+    margin-top: 0.3em;
+    width: 50%;
+    clear: both;
+    float: left;
+}
+
+/* About definition indention using text-indent */
+#blockabout dd{
+    font: 400 1.4rem 'Darker Grotesque', sans-serif;
+    width: 50%;
+    padding-bottom: 2em;  
+    float: right;
+} 
+
+/* About and results page table styles */
+table{
+    width: 100%;
+}
+
+table, th, td{
+    text-align: center;
+    border-top: 1px solid #CDEAE0;
+    border-left: 2px solid #d8d8d8;
+    border-right: 2px solid #d8d8d8;
+    border-bottom: 1px solid #CDEAE0; 
+    background-color: #FCFCFC;
+    border-collapse: collapse;
+}
+
+th{
+    color: #3B281D;  
+    padding: 0.5em;
+}
+
+/* Table cells for courses/codes */
+td{
+    padding: 1em;
+}
+
+td:hover{  
+    background-color: #CDEAE0;
+    padding: 1em;
+    transition: 275ms ease;
+}
+
+/* Table head and body dual fonts for distinction */
+thead{ 
+    font: 400 0.9rem 'Space Mono', monospace;
+    text-transform: uppercase;
+}
+
+tbody {  
+    font: 400 1.3rem 'Darker Grotesque', sans-serif;  
+    padding: 4em;
+}
+
+/* Apply page form container */
+.appform aside{ 
+    font-family: 'Darker Grotesque', sans-serif; 
+    background-color: #FFFFFF;
+    border-radius: 14px; 
+    margin-top: -3em;
+    padding: 3em;
+    width: 100%;
+    box-shadow: 0 1px 14px rgb(0 0 0 / 0.15);  
+    z-index: 1;
+}
+
+/* Placeholder in light but readable enough color */
+::placeholder{
+    color: #949494;
+}
+
+/* Styling the application form and input fields */
+.appform form{ 
+    padding: 3em 15em 5em;
+}
+
+input{
+    border: 1px solid #d8d8d8;
+    border-radius: 3px;
+    margin-bottom: 1em;
+}
+
+/* Using brackets to call out all similar input types */
+input[type="text"]:focus, input[type="select"]:focus, textarea:focus{
+    outline: none;
+    border-color: #CDEAE0;
+    box-shadow: 0 0 5px #CDEAE0;
+}
+
+input[type="text"], input[type="date"]{
+    font: 1.4rem 'Darker Grotesque', sans-serif;
+}
+
+input[type="text"]{
+    height: 30px; 
+    width: 100%; 
+    padding: 4px 6px 8px;
+}
+
+.jobrefnum{
+    font: 1.4rem 'Darker Grotesque', sans-serif;
+}
+
+input[type="date"]{
+    padding: 0.2em 0.4em;
+    width: 100%;
+}
+
+#dob-error, #age-error, #postal-error, #skills-error{   
+    font: 400 0.7rem 'Space Mono', monospace;
+    color: #a5033c;
+    display: flex; 
+    transition: top 275ms ease;
+}
+
+.result{
+    font: 400 1.6rem 'Darker Grotesque', sans-serif;  
+    color: #2c1e16;
+    padding: 0 85% 0 0;  
+    text-decoration: underline dotted #b3e1d1; 
+    position: relative;
+    bottom: 0.3em; 
+}
+
+/* Styling legend heading for fieldset containters */
+.appform legend, label{
+    font: 400 0.9rem 'Space Mono', monospace;
+}
+
+/* Styling app form general paragraph */
+.appform p{
+    font: 400 1rem 'Darker Grotesque', sans-serif; 
+    line-height: 2.5rem; 
+}
+
+/* Styling asterisk from Remix Icon to signify field requirement */
+.appform .ri-asterisk{
+    font-size: 0.8rem;
+    color: #a5033c;
+    display: inline-block;
+}
+
+/* Fieldset container styles */
+.gender-box, .skill-box{
+    border: 1px solid #d8d8d8;
+    border-radius: 3px;
+    margin: 0.7em 0 1.5em 0;
+    padding: 1rem;
+    width: 100%;
+}
+
+.gender-box label, .skill-box label{
+    font: 400 1.4rem 'Darker Grotesque', sans-serif;  
+}
+
+/* Accent color for radio and checkbox inputs for cohesion */
+input[type="radio"], input[type="checkbox"]{
+    accent-color: #3B281D;  
+    margin-left: 3.2rem; 
+}
+
+/* Floaters for two-column areas of app form */
+.field-left1, .field-left2, .field-left3{
+    padding: 0 1rem 0 0; 
+    width: 50%;
+    clear: both;
+    float: left;  
+}
+
+.field-right1, .field-right2, .field-right3{
+    padding: 0;
+    width: 50%; 
+    float: right;  
+}
+
+/* Styling select drop-down and comments area */
+select{
+    font: 1.4rem 'Darker Grotesque', sans-serif; 
+    border: 1px solid #d8d8d8;
+    border-radius: 3px; 
+    padding: 0.1em 0.5em;
+    margin-bottom: 0.85em;
+    width: 100%; 
+}
+
+textarea{
+    font: 1.4rem 'Darker Grotesque', sans-serif;
+    padding: 0.4em;
+    border: 1px solid #d8d8d8;
+    border-radius: 3px;
+    margin: 0.2em 0 1em 0;
+    width: 100%;
+    resize: vertical;
+}
+
+/* Header for form submission success */
+.success-head{
+    height: 30em;
+    position: absolute;
+    z-index: 1;
+    transform: translate(0,-60vh);
+}
+
+/* Styling 'reset' and 'submit' to resemble site buttons */
+input[type="reset"]{
+    font: 500 1.1rem 'Space Mono', monospace;
+    color: #321904;
+    background-color: transparent;
+    text-decoration: none;
+    border: 2px solid #007291;
+    border-radius: 30px;
+    padding: 13px 30px;
+}
+
+input[type="reset"]:hover{
+    color: #FCFCFC;
+    background-color: #007291;
+    border: 2px solid #007291;
+    cursor: pointer;
+    transition: 275ms ease;
+}
+
+input[type="submit"]{
+    font: 400 1.1rem 'Space Mono', monospace;
+    color: #ffffff;
+    background-color: #0f787e;
+    text-decoration: none;
+    border: 2px solid transparent;
+    border-radius: 30px;
+    padding: 13px 30px;
+    float: right;
+}
+
+input[type="submit"]:hover{
+    color: #321904;
+    background-color: transparent;
+    border: 2px solid #007291;
+    cursor: pointer;
+    transition: 275ms ease;
+}
+
+input[type="submit"].red-fill{
+    font: 400 1.1rem 'Space Mono', monospace;
+    color: #ffffff;
+    background-color: #a5033c;
+    text-decoration: none;
+    border: 2px solid transparent;
+    border-radius: 30px;
+    padding: 13px 30px;
+    float: right;
+}
+
+input[type="submit"].red-fill:hover{
+    color: #321904;
+    background-color: transparent;
+    border: 2px solid #a5033c;
+    cursor: pointer;
+    transition: 275ms ease;
+}
+
+/* Logo from Remix Icon */
+.ri-game-fill{
+    clear: both;
+    float: left;
+}
+
+.ri-error-warning-line{
+    padding-right: 0.3em;
+}
+
+/* Footer styles */
+footer{
+    background-color: #3B281D;
+    width: 100%;
+    clear: both;
+    position: absolute;
+}
+
+footer .plogo{ 
+    position: relative;
+    padding: 3em 0 0 4em;
+}
+
+/* Footer two-column and lists styles */
+#footer-left{  
+    padding: 1em 1em 4em 6em;
+    width: 50%;
+    float: left;
+}
+
+#footer-right{
+    padding: 1em 6em 4em 0;
+    width: 50%;
+    float: right; 
+} 
+
+footer ul li, ul li a{
+    font: 1.2rem 'Darker Grotesque', sans-serif;
+    color: #FCFCFC;
+    line-height: 2rem;  
+}
+
+#footer-left ul a{ 
+    text-decoration: 2px solid underline #007291;
+    display: block;
+    transition: 275ms ease;
+}
+
+footer ul li a:hover, .padding-spacer a:hover{ 
+    text-decoration: 2px solid underline #007291;
+    display: block;
+    transition: 275ms ease;
+}
+
+#footer-left ul li, #footer-right ul li{
+    list-style: none;
+} 
+
+footer .plogo{
+    font: 700 1.4rem 'Space Mono', monospace;
+    color: #EDEDED;
+    display: flex;
+    align-items: center;
+}
+
+footer .plogo div{
+    font-size: 1.2rem;
+    color: #EDEDED;
+    margin-right: 3px;
+} 
+
+/* Keyframes rule to animate icons on pages */
+@keyframes arrow1 {
+    0%,
+    100% {
+      transform: translate(0, 0);
+    }
+  
+    50% {
+      transform: translate(10px, 0);
+    }
+}
+
+@keyframes arrow2 {
+    0%,
+    100% {
+      transform: translate(0, 0);
+    }
+  
+    50% {
+      transform: translate(0, 10px);
+    }
+}
