@@ -13,7 +13,7 @@
       { "src": "/api/change-eoi",  "dest": "/api/change-eoi.php" },
       { "src": "/api/delete-eoi",  "dest": "/api/delete-eoi.php" },
       { "src": "/api/manage",  "dest": "/api/manage.php" },
-      { "src": "/styles/(.*)", "dest": "/styles/$1" },
+      { "src": "/styles/style.css", "dest": "/styles/style.css" },
       { "src": "/scripts/(.*)", "dest": "/scripts/$1" }
     ]
   }
