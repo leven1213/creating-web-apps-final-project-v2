@@ -15,7 +15,6 @@
     { "src": "/api/manage", "dest": "/api/manage.php" },
 
     { "src": "/styles/style.css", "dest": "/styles/style.css" },
-    { "src": "/scripts/apply.js", "dest": "/scripts/apply.js" },
-    { "src": "/scripts/ref-num.js", "dest": "/scripts/ref-num.js" }
+    { "src": "/scripts/(.*)", "dest": "/scripts/$1" }
   ]
 }
