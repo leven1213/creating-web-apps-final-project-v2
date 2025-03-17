@@ -10,7 +10,7 @@
 		<meta name="author" content="Levenspeil Sangalang">
         <title>PowerUp &#8211; Process EOI</title>
         <!-- References to external basic CSS file -->
-        <link rel="stylesheet" type="text/css" href="../styles/style.css">
+        <link rel="stylesheet" type="text/css" href="/styles/style.css">
         <!-- Favicon for tab -->
         <link rel="icon" type="image/x-icon" href="images/game-fill.png">
         <!-- References to web icons from Remixicon.com -->
