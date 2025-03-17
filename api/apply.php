@@ -11,7 +11,7 @@
     <meta name="author" content="Levenspeil Sangalang">
     <title>PowerUp &#8211; Apply</title>
     <!-- References an external CSS file for styling -->
-    <link rel="stylesheet" type="text/css" href="styles/style.css">
+    <link rel="stylesheet" type="text/css" href="../styles/style.css">
     <!-- Link to script file -->
     <script src="scripts/apply.js"></script>
     <!-- Favicon for the browser tab -->

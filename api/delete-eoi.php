@@ -11,7 +11,7 @@
     <meta name="author" content="Levenspeil Sangalang">
     <title>PowerUp &#8211; Delete EOI</title>
     <!-- Link to external CSS file for styling -->
-    <link rel="stylesheet" type="text/css" href="styles/style.css">
+    <link rel="stylesheet" type="text/css" href="../styles/style.css">
     <!-- Favicon for browser tab -->
     <link rel="icon" type="image/x-icon" href="images/game-fill.png">
     <!-- Import Remixicon icons -->
