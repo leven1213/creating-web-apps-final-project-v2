@@ -10,7 +10,7 @@
 		<meta name="author" content="Levenspeil Sangalang">
         <title>PowerUp &#8211; Search EOI</title>
         <!-- References to external basic CSS file -->
-        <link rel="stylesheet" type="text/css" href="/styles/style.css">
+        <link rel="stylesheet" type="text/css" href="../styles/style.css">
         <!-- Link to script file -->
 		<script src="scripts/apply.js"></script> 
         <!-- Favicon for tab -->
