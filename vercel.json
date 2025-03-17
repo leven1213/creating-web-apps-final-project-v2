@@ -6,8 +6,14 @@
     },
     "routes": [
       { "src": "/(.*)",  "dest": "/api/index.php" },
-      { "src": "/styles/style.css", "dest": "/styles/style.css" },
-      { "src": "/scripts/apply.js", "dest": "/scripts/apply.js" },
-      { "src": "/scripts/ref-num.js", "dest": "/scripts/ref-num.js" }
+      { "src": "/api/about",  "dest": "/api/about.php" },
+      { "src": "/api/jobs",  "dest": "/api/jobs.php" },
+      { "src": "/api/search-eoi",  "dest": "/api/search-eoi.php" },
+      { "src": "/api/list-eoi",  "dest": "/api/list-eoi.php" },
+      { "src": "/api/change-eoi",  "dest": "/api/change-eoi.php" },
+      { "src": "/api/delete-eoi",  "dest": "/api/delete-eoi.php" },
+      { "src": "/api/manage",  "dest": "/api/manage.php" },
+      { "src": "/styles/(.*)", "dest": "/styles/$1" },
+      { "src": "/scripts/(.*)", "dest": "/scripts/$1" }
     ]
   }
